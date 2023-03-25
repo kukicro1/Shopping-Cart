@@ -1,0 +1,31 @@
+.card {
+    border: 1px solid black;
+    height: 300px;
+    width: 250px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 200px 25px 25px 50px;
+    justify-items: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.colorContainer {
+    width: 230px;
+    height: 180px;
+}
+
+button {
+    border: none;
+    color: #F6F1F1;
+    background-color: #146C94;
+    border-radius: 10px;
+    height: 30px;
+    width: 100px;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+button:hover {
+    cursor: pointer;
+}
