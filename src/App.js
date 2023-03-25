@@ -5,6 +5,7 @@ import { Home } from './components/Home'
 import { Navbar } from './components/Navbar'
 import { Products } from './components/Products'
 import { ShoppingCart } from './components/ShoppingCart'
+import { Footer } from './components/Footer'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path='/Contact' element={<Contact />} />
         <Route path='/ShoppingCart' element={<ShoppingCart />}></Route>
       </Routes>
+      <Footer />
     </div>
   )
 }

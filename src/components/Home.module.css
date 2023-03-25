@@ -1,0 +1,50 @@
+.homeContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+.message {
+  font-size: 2em;
+  color: #494949;
+}
+
+.bestShop {
+  font-size: 4em;
+  font-weight: bold;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.wrapButton {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.goShopping {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f6f1f1;
+  text-decoration: none;
+  height: 40px;
+  width: 200px;
+  background-color: #000000;
+  padding: 10px;
+  font-size: 1.5em;
+  border-radius: 30px;
+}
+
+.goShopping:hover {
+  height: 50px;
+  width: 250px;
+  font-size: 2em;
+  border-radius: 40px;
+}
