@@ -1,5 +1,3 @@
-import React from 'react'
-
 export const ShoppingCart = () => {
-  return <div>ShoppingCart</div>
+  return <div>Don't forget the Shopping Cart</div>
 }
