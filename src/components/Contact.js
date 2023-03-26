@@ -65,7 +65,7 @@ export const Contact = () => {
           </svg>
         </Link>
       </div>
-      <p>Best Shop, Zagreb, Croatia</p>
+      <p className={ContactCSS.p}>Best Shop, Zagreb, Croatia</p>
     </div>
   )
 }

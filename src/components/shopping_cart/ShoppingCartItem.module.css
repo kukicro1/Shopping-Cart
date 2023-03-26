@@ -1,0 +1,57 @@
+.itemContainer {
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 150px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2em;
+  margin: 10px;
+}
+
+.colorContainer {
+  width: 180px;
+  height: 130px;
+  background-color: red;
+  margin: auto;
+}
+
+.infoContainer {
+  width: 200px;
+  height: 130px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  margin: auto;
+}
+
+.quantityContainer {
+  width: 200px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.quantityContainer > div {
+    width: 80px;
+    text-align: center;
+}
+
+.quantityContainer > button {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    background-color: black;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    border-radius: 5px;
+}
+
+.quantityContainer > button:hover {
+    cursor: pointer;
+}

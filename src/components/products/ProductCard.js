@@ -10,7 +10,7 @@ export const ProductCard = ({ color, price }) => {
       <div style={myStyle} className={ProductCardCSS.colorContainer}></div>
       <div>Color: {color}</div>
       <div>Price: {price} $</div>
-      <button>Purchase</button>
+      <button className={ProductCardCSS.button}>Purchase</button>
     </div>
   )
 }

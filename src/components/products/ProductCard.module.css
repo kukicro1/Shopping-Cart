@@ -15,7 +15,7 @@
     height: 180px;
 }
 
-button {
+.button {
     border: none;
     color: #F6F1F1;
     background-color: #146C94;
@@ -26,6 +26,6 @@ button {
     font-weight: bold;
 }
 
-button:hover {
+.button:hover {
     cursor: pointer;
 }
