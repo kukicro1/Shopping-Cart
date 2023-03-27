@@ -21,7 +21,7 @@
   font-weight: bold;
 }
 
-.cartContainer > button {
+.button {
   margin: 10px;
   width: 200px;
   height: 40px;
@@ -33,6 +33,6 @@
   border-radius: 5px;
 }
 
-.cartContainer > button:hover {
+.button:hover {
   cursor: pointer;
 }
