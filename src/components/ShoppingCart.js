@@ -4,33 +4,28 @@ import ShoppingCartCSS from './ShoppingCart.module.css'
 import { ShoppingCartItem } from './shopping_cart/ShoppingCartItem'
 
 export const ShoppingCart = ({ purchasedItems, addItem, deleteItem }) => {
-  const [groupedColorsObject, setGroupedColorsObject] = useState([])
-  const [groupedColorsArray, setGroupedColorsArray] = useState([])
+  const [groupedColors, setGroupedColors] = useState([])
 
   useEffect(() => {
-    setGroupedColorsArray(
-      Object.entries(groupedColorsObject).map(
-        ([color, { price, quantity }]) => ({
-          color,
-          price,
-          quantity,
-        })
-      )
-    )
-  }, [groupedColorsObject])
+    const groupedColorsObj = purchasedItems.reduce((acc, { name, price }) => {
+      if (!acc[name]) {
+        acc[name] = { price, quantity: 1 }
+      } else {
+        acc[name].price += price
+        acc[name].quantity++
+      }
+      return acc
+    }, {})
 
-  useEffect(() => {
-    setGroupedColorsObject(
-      purchasedItems.reduce((acc, { name, price }) => {
-        if (!acc[name]) {
-          acc[name] = { price, quantity: 1 }
-        } else {
-          acc[name].price += price
-          acc[name].quantity++
-        }
-        return acc
-      }, {})
+    const groupedColorsArr = Object.entries(groupedColorsObj).map(
+      ([color, { price, quantity }]) => ({
+        color,
+        price,
+        quantity,
+      })
     )
+
+    setGroupedColors(groupedColorsArr)
   }, [purchasedItems])
 
   const totalPrice = purchasedItems.reduce(
@@ -41,7 +36,7 @@ export const ShoppingCart = ({ purchasedItems, addItem, deleteItem }) => {
   return (
     <div className={ShoppingCartCSS.cartContainer}>
       <div className={ShoppingCartCSS.wrapTitle}>Your Shopping Cart</div>
-      {groupedColorsArray
+      {groupedColors
         .sort((a, b) => a.color.localeCompare(b.color))
         .map((item) => {
           return (

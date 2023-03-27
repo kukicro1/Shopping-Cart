@@ -6,7 +6,7 @@ import { Navbar } from './components/Navbar'
 import { Products } from './components/Products'
 import { ShoppingCart } from './components/ShoppingCart'
 import { Footer } from './components/Footer'
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 const App = () => {
   const [purchasedItems, setPurchasedItems] = useState([])
@@ -16,14 +16,14 @@ const App = () => {
     setQuantity(purchasedItems.length)
   }, [purchasedItems])
 
-  const handlePurchase = (color, price) => {
+  const handlePurchase = useCallback((color, price) => {
     setPurchasedItems((prevPurchased) => [
       ...prevPurchased,
       { name: color, price: price },
     ])
-  }
+  }, [])
 
-  const deleteItem = (color) => {
+  const deleteItem = useCallback((color) => {
     setPurchasedItems((prevPurchased) => {
       const index = prevPurchased.findIndex((item) => item.name === color)
       if (index !== -1) {
@@ -33,14 +33,14 @@ const App = () => {
       }
       return prevPurchased
     })
-  }
+  }, [])
 
-  const addItem = (color, price) => {
+  const addItem = useCallback((color, price) => {
     setPurchasedItems((prevPurchased) => [
       ...prevPurchased,
       { name: color, price: price },
     ])
-  }
+  }, [])
 
   return (
     <div className={AppCSS.appContainer}>
