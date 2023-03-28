@@ -1,7 +1,9 @@
 import { ProductCard } from './products/ProductCard'
 import ProductsCSS from './Products.module.css'
+import { memo } from 'react'
 
-export const Products = ({ handlePurchase }) => {
+export const Products = memo(function Products({ handlePurchase }) {
+  console.log('render Products')
   return (
     <div className={ProductsCSS.productContainer}>
       <ProductCard handlePurchase={handlePurchase} price={10} color={'red'} />
@@ -34,4 +36,4 @@ export const Products = ({ handlePurchase }) => {
       />
     </div>
   )
-}
+})
